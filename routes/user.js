@@ -5,7 +5,12 @@ router.post("/addIncome", isSignedIn, async (req, res) => {
   const { user, body } = req;
   try {
     body.userId = user._id;
-    body.AppHRA = body.CityType === "Metro" ? 100 : 50;
+    body.AppHRA =
+      body.CityType === "Metro"
+        ? Number(body.Basic) * 0.5 + Number(body.Basic) * 0.1 + Number(body.HRA)
+        : Number(body.Basic) * 0.4 +
+          Number(body.Basic) * 0.1 +
+          Number(body.HRA);
     await Salary.findOneAndUpdate({ userId: user._id }, body, {
       upsert: true,
     });
@@ -16,7 +21,7 @@ router.post("/addIncome", isSignedIn, async (req, res) => {
   }
 });
 
-router.post("/calculateTax", isSignedIn, async (req, res) => {
+router.get("/calculateTax", isSignedIn, async (req, res) => {
   const { user } = req;
   try {
     const salary = await Salary.findOne({ userId: user._id });

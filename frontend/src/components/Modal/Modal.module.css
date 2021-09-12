@@ -1,0 +1,72 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+.Preview {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.PreviewData {
+  z-index: 100;
+  position: relative;
+  background: rgb(255, 255, 255);
+  margin: auto;
+  border-radius: 10px;
+  min-width: 600px;
+  color: #333;
+  font-weight: 400;
+  padding: 1rem;
+  animation: Fade 1s ease-out 0s;
+}
+@keyframes Fade {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    background: rgb(248, 128, 73);
+  }
+  25% {
+    transform: scale(1.2);
+
+    background: rgb(160, 215, 224);
+  }
+  50% {
+    transform: scale(1.25);
+
+    background: rgb(152, 204, 93);
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+    background: rgb(210, 154, 241);
+  }
+}
+.Loader {
+  z-index: 14;
+}
+.Preview .PreviewData span:last-child {
+  font-weight: bold;
+}
+.Preview .PreviewData div {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .PreviewData {
+    min-width: 70%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .PreviewData {
+    min-width: 80%;
+  }
+}

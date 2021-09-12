@@ -1,0 +1,125 @@
+.Home {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.Home form {
+  background: rgb(255, 255, 255);
+  padding: 2rem;
+  margin: 10px;
+  min-width: 40%;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 1px 1px 10px 3px rgb(221, 223, 222);
+}
+.Home form label {
+  color: rgb(68, 110, 110);
+}
+.Home form label::before {
+  content: "*";
+}
+.Home .Button {
+  padding: 0;
+  margin-right: 10px;
+}
+.Home form div {
+  padding: 0.5rem;
+}
+
+.Home form div select {
+  padding: 0.8rem;
+  outline: none;
+}
+.Home form div:last-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.Last,
+.Last + div {
+  padding: 0 !important;
+}
+
+.Home form div option {
+  padding: 0.8rem;
+}
+.Home form div input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 5px;
+  border: 1px solid rgb(231, 228, 228);
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 1px rgb(245, 244, 244);
+}
+.Home form div input:focus {
+  border: 1px solid rgb(173, 209, 238);
+}
+button {
+  background: tomato;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+button:hover {
+  background: rgb(248 110 85);
+}
+.City {
+  background: teal;
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0 !important;
+  border-radius: 5px;
+  position: absolute;
+}
+.City p {
+  cursor: pointer;
+  min-width: 150px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(197, 199, 199);
+}
+
+.City p:last-child {
+  border-bottom: none;
+}
+.Home button:hover {
+  background: rgb(248, 110, 85);
+}
+.Home button:disabled {
+  cursor: not-allowed;
+  background: grey;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .Home form {
+    min-width: 70%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .Home form {
+    min-width: 80%;
+  }
+  .Home p {
+    min-width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Home form {
+    min-width: 100%;
+    padding: 1rem 0;
+  }
+}
