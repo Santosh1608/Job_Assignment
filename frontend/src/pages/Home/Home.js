@@ -58,6 +58,7 @@ function Home({ setModal, modal }) {
             type="number"
             value={Basic}
             placeholder="Basic"
+            min="0"
             required
           />
         </div>
@@ -70,6 +71,7 @@ function Home({ setModal, modal }) {
             id="LTA"
             placeholder="LTA"
             required
+            min="0"
             value={LTA}
           />
         </div>
@@ -82,6 +84,7 @@ function Home({ setModal, modal }) {
             id="HRA"
             placeholder="HRA"
             required
+            min="0"
             value={HRA}
           />
         </div>
@@ -94,6 +97,7 @@ function Home({ setModal, modal }) {
             id="FA"
             placeholder="Food Allowance"
             required
+            min="0"
             value={FA}
           />
         </div>
@@ -106,6 +110,7 @@ function Home({ setModal, modal }) {
             id="Inv"
             placeholder="Investments"
             required
+            min="0"
             value={Inv}
           />
         </div>
@@ -118,6 +123,7 @@ function Home({ setModal, modal }) {
             id="Rent"
             placeholder="Rent"
             required
+            min="0"
             value={Rent}
           />
         </div>
@@ -130,6 +136,7 @@ function Home({ setModal, modal }) {
             id="Med"
             placeholder="Mediclaim policy premium paid"
             required
+            min="0"
             value={Med}
           />
         </div>

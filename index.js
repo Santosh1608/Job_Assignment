@@ -15,6 +15,17 @@ app.get("/", (req, res) => {
 });
 app.use(authRoutes);
 app.use(userRoutes);
+
+//Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static("frontend/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
+
+// Start server
 app.listen(PORT, () => {
   console.log(`Listen on PORT ${PORT}`);
 });

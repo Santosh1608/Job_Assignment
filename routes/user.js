@@ -7,10 +7,16 @@ router.post("/addIncome", isSignedIn, async (req, res) => {
     body.userId = user._id;
     body.AppHRA =
       body.CityType === "Metro"
-        ? Number(body.Basic) * 0.5 + Number(body.Basic) * 0.1 + Number(body.HRA)
-        : Number(body.Basic) * 0.4 +
-          Number(body.Basic) * 0.1 +
-          Number(body.HRA);
+        ? Math.min(
+            Number(body.Basic) * 0.5,
+            Number(body.Basic) * 0.1,
+            Number(body.HRA)
+          )
+        : Math.min(
+            Number(body.Basic) * 0.4,
+            Number(body.Basic) * 0.1,
+            Number(body.HRA)
+          );
     await Salary.findOneAndUpdate({ userId: user._id }, body, {
       upsert: true,
     });
